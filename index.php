@@ -11,8 +11,10 @@
 
     <!-- TODO 1: Tambahkan atribut form ini sehingga data dikirim ke file ini dengan method POST -->
 
-    <form>
+    <form action="index.php" method="POST">
+        
         Bilangan
+        <input type="text" name="bilangan">
         <!-- TODO 2: Tambahkan input berupa text bernama `bilangan` -->
 
         <button type="submit">Kirim</button>
@@ -20,7 +22,22 @@
 
     <?php
         //TODO 3 : Lakukang pencarian faktor bilangan disini dan tampilkan 
-
+if(isset($_POST['submit']))
+{
+        $bilangan = $_POST ['bilangan'];
+        $i=1;
+    
+    echo "faktor bilangan dari ".$bilangan." adalah : ";
+    while ($i <= $bilangan)
+    {
+     if ($bilangan % $i==0)
+     {
+              $faktor=$i;
+              echo "$faktor ";
+     }
+            $i++;
+    }
+}
     ?>
 </body>
 </html>
